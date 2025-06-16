@@ -55,7 +55,7 @@ jobs:
         run: wp i18n make-php ./languages
 
       - name: Run wp-cli i18n make-json
-        run: wp i18n make-json ./languages
+        run: wp i18n make-json --no-purge ./languages
 
       - name: Check if there are changes
         run: echo "CHANGES_DETECTED=$([[ -z $(git status --porcelain) ]] && echo "0" || echo "1")" >> $GITHUB_ENV
